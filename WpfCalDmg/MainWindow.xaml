@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalDmg"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Sword Damage" Height="175" Width="300">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="flaming" Content="Flaming" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Flaming_Checked" Unchecked="Flaming_Unchecked"/>
+        <CheckBox x:Name="magic" Grid.Column="1" Content="Magic" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Magic_Checked" Unchecked="Magic_Unchecked"/>
+        <Button Content="Roll for damage" Grid.Row="1" Margin="20,10" Grid.ColumnSpan="2" Click="Button_Click"/>
+        <TextBlock x:Name="damage" HorizontalAlignment="Center" Grid.Row="2" Text="damage" VerticalAlignment="Center" Grid.ColumnSpan="2
+"/>
+
     </Grid>
 </Window>
