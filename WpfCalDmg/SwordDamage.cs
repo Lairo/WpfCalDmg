@@ -12,8 +12,8 @@ namespace WpfCalDmg
         public const int FLAME_DAMAGE = 2;
 
         public int Roll;
-        public decimal MagicMultiplier = 1M;
-        public int FlamingDamage = 0;
+        private decimal MagicMultiplier = 1M;
+        private int FlamingDamage = 0;
         public int Damage;
         
         public void CalculateDamage()

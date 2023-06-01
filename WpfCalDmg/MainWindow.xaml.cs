@@ -25,9 +25,10 @@ namespace WpfCalDmg
         public MainWindow()
         {
             InitializeComponent();
+            RollDice();
             swordDamage.SetMagic(false);
             swordDamage.SetFlaming(false);
-            RollDice();
+            
         }
 
         public void RollDice()
