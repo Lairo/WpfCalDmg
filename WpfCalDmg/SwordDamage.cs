@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,26 +13,28 @@ namespace WpfCalDmg
         public const int FLAME_DAMAGE = 2;
 
         public int Roll;
-        private decimal MagicMultiplier = 1M;
-        private int FlamingDamage = 0;
+        private decimal magicMultiplier = 1M;
+        private int flamingDamage = 0;
         public int Damage;
         
         public void CalculateDamage()
         {
-            Damage = (int)(Roll * MagicMultiplier) + BASE_DAMAGE + FlamingDamage;
+            Damage = (int)(Roll * magicMultiplier) + BASE_DAMAGE + flamingDamage;
+            Debug.WriteLine($"CalculateDamage finished: {Damage} (roll:{Roll}))");
         }
 
         public void SetMagic(bool isMagic)
         {
             if (isMagic)
             {
-                MagicMultiplier = 1.75M;
+                magicMultiplier = 1.75M;
             }
             else
             {
-                MagicMultiplier = 1M;
+                magicMultiplier = 1M;
             }
             CalculateDamage();
+            Debug.WriteLine($"SetMaAgic finished: {Damage} (roll:{Roll}))");
         }
 
         public void SetFlaming(bool isFlaming)
@@ -41,6 +44,7 @@ namespace WpfCalDmg
             {
                 Damage += FLAME_DAMAGE;
             }
+            Debug.WriteLine($"SetFlaming finished: {Damage} (roll:{Roll}))");
         }
     }
 }
